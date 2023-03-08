@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script src="./main.js"></script>
+		<title>ToDo app</title>
+	</head>
+	<body>
+		<div class="p-4 max-w-[400px] mx-auto">
+			<header class="mb-4">
+				<h1>ToDo app</h1>
+			</header>
+			<main class="flex flex-col items-center">
+				<form id="add_todo_form" class="w-full mb-8">
+					<fieldset class="flex flex-col items-center">
+						<legend class="pb-4">Add new todo</legend>
+
+						<div class="pb-4 flex flex-col w-full">
+							<label type="text" for="form_title">title</label>
+							<input
+								type="text"
+								id="form_title"
+								class="border-solid border-2 border-indigo-600 rounded-md p-2"
+							/>
+						</div>
+
+						<div class="pb-4 flex flex-col w-full">
+							<label type="text" for="form_description">description</label>
+							<textarea
+								id="form_description"
+								class="border-solid border-2 border-indigo-600 rounded-md min-h-[100px] p-2"
+							></textarea>
+						</div>
+
+						<button
+							type="submit"
+							class="bg-sky-600 rounded-md px-10 py-2 text-white"
+						>
+							add todo
+						</button>
+					</fieldset>
+				</form>
+				<ul id="uncompleted-todos" class="w-full mb-8"></ul>
+				<ul id="completed-todos" class="w-full"></ul>
+			</main>
+		</div>
+		<template id="uncompleted_todo_template">
+			<li class="flex w-full justify-between bg-yellow-200 mb-2">
+				<div>
+					<p class="title">title</p>
+					<p class="description">description</p>
+				</div>
+				<button class="complete">complete</button>
+			</li>
+		</template>
+		<template id="completed_todo_template">
+			<li class="flex w-full justify-between bg-lime-200 mb-2">
+				<div>
+					<p class="title">title</p>
+					<p class="description">description</p>
+				</div>
+				<button class="remove">remove</button>
+			</li>
+		</template>
+	</body>
+</html>
